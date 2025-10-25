@@ -1,4 +1,5 @@
-#include <Windows.h>
+ï»¿#include <Windows.h>
+#include"DX12.h"
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
@@ -19,14 +20,17 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 }
 
 int WINAPI WinMain(
-    HINSTANCE hInstance,      // ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌŽ¯•Ê”Ô†
-    HINSTANCE hPrevInstance,  // Šî–{Žg‚í‚È‚­‚Ä‚¢‚¢
-    LPSTR lpCmdLine,          // ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”i‹N“®Žž‚ÌƒIƒvƒVƒ‡ƒ“j
-    int nCmdShow              // ƒEƒBƒ“ƒhƒE‚Ì•\Ž¦•û–@iÅ‘å‰»AÅ¬‰»‚È‚Çj
+    HINSTANCE hInstance,      // ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®è­˜åˆ¥ç•ªå·
+    HINSTANCE hPrevInstance,  // åŸºæœ¬ä½¿ã‚ãªãã¦ã„ã„
+    LPSTR lpCmdLine,          // ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ï¼ˆèµ·å‹•æ™‚ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ï¼‰
+    int nCmdShow              // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è¡¨ç¤ºæ–¹æ³•ï¼ˆæœ€å¤§åŒ–ã€æœ€å°åŒ–ãªã©ï¼‰
 )
 {
-    // ‚±‚±‚ÉƒƒCƒ“‚Ìˆ—‚ð‘‚­
-    // 1. ƒEƒBƒ“ƒhƒEƒNƒ‰ƒX“o˜^
+    DX12 dx12;
+
+
+    // ã“ã“ã«ãƒ¡ã‚¤ãƒ³ã®å‡¦ç†ã‚’æ›¸ã
+    // 1. ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¯ãƒ©ã‚¹ç™»éŒ²
     WNDCLASS wc{};
     wc.lpfnWndProc = WindowProc;         
     wc.hInstance = hInstance;            
@@ -37,7 +41,7 @@ int WINAPI WinMain(
     RegisterClass(&wc);
 
 
-    // 2. ƒEƒBƒ“ƒhƒEì¬
+    // 2. ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½œæˆ
     HWND hwnd = CreateWindow(
         "GameWindow",
         "My Game",
@@ -50,7 +54,7 @@ int WINAPI WinMain(
     );
 
     ShowWindow(hwnd, nCmdShow);
-    // 3. ƒƒbƒZ[ƒWƒ‹[ƒv
+    // 3. ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ«ãƒ¼ãƒ—
 
     bool loop = true;
     
