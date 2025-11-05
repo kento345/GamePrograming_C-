@@ -16,18 +16,27 @@
     <Filter Include="Dirctx12">
       <UniqueIdentifier>{d4f012fd-848e-4f8f-b912-9a9149f2be70}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Window">
+      <UniqueIdentifier>{5492c81d-5bb9-40f4-af0c-7f1cf90afdf1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="DX12.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Dirctx12</Filter>
+    </ClCompile>
+    <ClCompile Include="window.cpp">
+      <Filter>Window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX12.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Dirctx12</Filter>
+    </ClInclude>
+    <ClInclude Include="window.h">
+      <Filter>Window</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

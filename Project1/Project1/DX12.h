@@ -5,8 +5,9 @@
 class DX12
 {
 public:
-	DX12() {};
-	~DX12() {};
+	DX12() {}
+
+	~DX12() {}
 
 	IDXGIFactory4* CreateDXGIFactory();
 	IDXGIAdapter1* GetHardwareAdapter(IDXGIFactory4* factory);

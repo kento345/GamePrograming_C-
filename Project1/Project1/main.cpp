@@ -26,13 +26,14 @@ int WINAPI WinMain(
     int nCmdShow              // ウィンドウの表示方法（最大化、最小化など）
 )
 {
-   /* DX12 dx12;
+    DX12 dx12;
    
-    IDXGIFactory4* factory = dx12.CreateDXGIFactory();
-    IDXGIAdapter1* adapter = dx12.GetHardwareAdapter(factory);
-    ID3D12Device* device = dx12.CreateD3D12Device(adapter);
-    ID3D12CommandQueue* commandQueue = dx12.CreateCommandQueue(device);
-    IDXGISwapChain3* swapChainDesc = dx12.CreateSwapChain(factory, commandQueue, hwnd);*/
+    //auto factory = dx12.CreateDXGIFactory();
+    //auto adapter = dx12.GetHardwareAdapter(factory);
+    //auto device = dx12.CreateD3D12Device(adapter);
+    //auto commandQueue = dx12.CreateCommandQueue(device);
+    //dx12.CreateSwapChain(factory, commandQueue, app.windowInstance_.handle_);
+
 
     // ここにメインの処理を書く
     // 1. ウィンドウクラス登録
@@ -82,6 +83,7 @@ int WINAPI WinMain(
         }
     }
 
+  
 
     return 0;
 }

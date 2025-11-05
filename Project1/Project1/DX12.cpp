@@ -1,10 +1,11 @@
 ﻿#include "DX12.h"
 
+#pragma comment(lib,"d3d12.lib")
 #pragma comment(lib,"dxgi.lib")
 
 
 
-IDXGIFactory4* CreateDXGIFactory()
+IDXGIFactory4* DX12::CreateDXGIFactory()
 {
 	IDXGIFactory4* factory;
 	UINT createFactoryFlags = 0;
@@ -18,15 +19,12 @@ IDXGIFactory4* CreateDXGIFactory()
 	{
 		OutputDebugString("Failed to create DXGI Factory\n");
 		return nullptr;
-
-		//factory->Release();
 	}
-	//factory->Release();
 
 	return factory;
 }
 
-IDXGIAdapter* GetHardwareAdapter(IDXGIFactory4* factory)
+IDXGIAdapter1* DX12::GetHardwareAdapter(IDXGIFactory4* factory)
 {
 	IDXGIAdapter1* adapter;
 
@@ -61,7 +59,7 @@ IDXGIAdapter* GetHardwareAdapter(IDXGIFactory4* factory)
 	return nullptr;
 }
 
-ID3D12Device* CreateD3D12Device(IDXGIAdapter1* adapter)
+ID3D12Device* DX12::CreateD3D12Device(IDXGIAdapter1* adapter)
 {
 	ID3D12Device* device;
 
@@ -89,7 +87,7 @@ ID3D12Device* CreateD3D12Device(IDXGIAdapter1* adapter)
 	return device;
 }
 
-ID3D12CommandQueue* CreateCommandQueue(ID3D12Device* device)
+ID3D12CommandQueue* DX12::CreateCommandQueue(ID3D12Device* device)
 {
 	// コマンドキューの設定
 	D3D12_COMMAND_QUEUE_DESC queueDesc = {};
@@ -113,7 +111,7 @@ ID3D12CommandQueue* CreateCommandQueue(ID3D12Device* device)
 	return commandQueue;
 }
 
-IDXGISwapChain3* CreateSwapChain(IDXGIFactory4* factory, ID3D12CommandQueue* commandQueue, HWND hwnd)
+IDXGISwapChain3* DX12::CreateSwapChain(IDXGIFactory4* factory, ID3D12CommandQueue* commandQueue, HWND hwnd)
 {
 	DXGI_SWAP_CHAIN_DESC1 swapChainDesc = {};
 	swapChainDesc.BufferCount = 2;
@@ -153,7 +151,7 @@ IDXGISwapChain3* CreateSwapChain(IDXGIFactory4* factory, ID3D12CommandQueue* com
 	return swapChain;
 }
 
-void EnableDebugLayer()
+void DX12::EnableDebugLayer()
 {
 #if defined(_DEBUG)
 	ID3D12Debug* debugController;
