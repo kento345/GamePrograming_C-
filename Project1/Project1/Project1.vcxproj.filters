@@ -27,16 +27,10 @@
     <ClCompile Include="DX12.cpp">
       <Filter>Dirctx12</Filter>
     </ClCompile>
-    <ClCompile Include="window.cpp">
-      <Filter>Window</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX12.h">
       <Filter>Dirctx12</Filter>
-    </ClInclude>
-    <ClInclude Include="window.h">
-      <Filter>Window</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
