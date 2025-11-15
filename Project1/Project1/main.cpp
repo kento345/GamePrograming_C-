@@ -28,11 +28,13 @@ int WINAPI WinMain(
 {
     DX12 dx12;
    
-    //auto factory = dx12.CreateDXGIFactory();
-    //auto adapter = dx12.GetHardwareAdapter(factory);
-    //auto device = dx12.CreateD3D12Device(adapter);
-    //auto commandQueue = dx12.CreateCommandQueue(device);
-    //dx12.CreateSwapChain(factory, commandQueue, app.windowInstance_.handle_);
+    /*
+    auto factory = dx12.CreateDXGIFactory();
+    auto adapter = dx12.GetHardwareAdapter(factory);
+    auto device = dx12.CreateD3D12Device(adapter);
+    auto commandQueue = dx12.CreateCommandQueue(device);
+    dx12.CreateSwapChain(factory, commandQueue, app.windowInstance_.handle_);
+    */
 
 
  
